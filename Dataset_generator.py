@@ -56,7 +56,7 @@ def augmentor(name,image, idx, num_image, maxdelta, out_path):
         #-----------------Brightness------------------------------------------------------#
 
         image_brightness = tf.image.stateless_random_brightness(image, max_delta=maxdelta, seed=seed)
-        plt.imsave(out_path+name+str(idx)+"_"+str(i)+".png",image_brightness.numpy())
+        cv2.imwrite(out_path+name+str(idx)+"_"+str(i)+".png",image_brightness.numpy())
         '''
         #-----------------Hue------------------------------------------------------#
         seed=(1,i)
